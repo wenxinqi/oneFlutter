@@ -10,7 +10,7 @@ class RootScene extends StatefulWidget{
 }
 
 class RootSceneState extends State<RootScene>{
-  int _tabIndex = 0;
+  int _tabIndex = 1;
   //设置image
   List<Image> _tabImages = [
     Image.asset('img/tab_bookstore_n.png'),
@@ -28,7 +28,7 @@ class RootSceneState extends State<RootScene>{
       body: IndexedStack(
         children:<Widget> [
           MeScene(),
-          HomeScene(),
+          BookShelf(),
         ],
         index: _tabIndex,
       ),
