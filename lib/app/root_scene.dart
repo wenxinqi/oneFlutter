@@ -13,10 +13,12 @@ class RootSceneState extends State<RootScene>{
   int _tabIndex = 1;
   //设置image
   List<Image> _tabImages = [
+    Image.asset('img/tab_bookshelf_n.png'),
     Image.asset('img/tab_bookstore_n.png'),
     Image.asset('img/tab_me_n.png'),
   ];
   List<Image> _tabSelectedImages = [
+    Image.asset('img/tab_bookshelf_p.png'),
     Image.asset('img/tab_bookstore_p.png'),
     Image.asset('img/tab_me_p.png'),
   ];
@@ -27,16 +29,18 @@ class RootSceneState extends State<RootScene>{
       //设置内容
       body: IndexedStack(
         children:<Widget> [
-          MeScene(),
           BookShelf(),
+          HomeScene(),
+          MeScene(),
         ],
         index: _tabIndex,
       ),
       bottomNavigationBar: CupertinoTabBar(
         backgroundColor: Colors.white, 
         items: [
-          BottomNavigationBarItem(icon: getTabIcon(0),label: "我的"),
-          BottomNavigationBarItem(icon: getTabIcon(1),label: "书架"),
+          BottomNavigationBarItem(icon: getTabIcon(0),label: "书架"),
+          BottomNavigationBarItem(icon: getTabIcon(1),label: "书城"),
+          BottomNavigationBarItem(icon: getTabIcon(2),label: "我的"),
         ],
         currentIndex: _tabIndex,
         onTap: (index){

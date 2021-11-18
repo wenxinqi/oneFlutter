@@ -2,11 +2,11 @@ import 'dart:async';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 class Request{
-  static Future<dynamic> ge ({required String action,Map? params}) async{
+  static Future<dynamic> get ({required String action,Map? params}) async{
       return Request.mock(action: action,params: params);
   }
 
-  static Future<dynamic> pos ({required String action,Map? params}) async{
+  static Future<dynamic> post ({required String action,Map? params}) async{
     return Request.mock(action: action,params: params);
   }
 
